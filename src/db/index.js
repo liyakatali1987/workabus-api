@@ -7,7 +7,9 @@ const dbString = process.env.DATABASE_URL;
 
 
 exports.dbConnect = () => {
-  mongoose.connection.once("open", () => console.log("DB connection"));
+  mongoose.connection.once("open", () => {
+    console.log("DB connection")
+  });
   
   try{
     return mongoose.connect(
