@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const { registerUser } = require('./registeration.model');
+
 
 const companySchema = new mongoose.Schema(
   {
@@ -13,10 +13,11 @@ const companySchema = new mongoose.Schema(
     about: { type: String },
     mobilePhone: { type: String },
     phoneNumber: { type: String },
+    user_type: { type: String, required: true, default: 'company'},
   },
-  { discriminatorKey: "user_type", collection: "workabus_users" }
+  { collection: "workabus_companies" }
 );
 
-const Company = registerUser.discriminator("Company", companySchema);
+const Company = mongoose.model("Company", companySchema, "workabus_companies");
 
 module.exports = Company;

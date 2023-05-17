@@ -11,7 +11,7 @@ const registrationSchema = new mongoose.Schema(
     updated_at: { type: Date, default: new Date },
     user_type: { type: String },
   },
-  { collection: "workabus_users" }
+  { collection: "workabus_users" } // Specify the collection name here
 );
 
 const registerUser = mongoose.model("registerUser", registrationSchema);
