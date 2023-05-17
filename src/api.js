@@ -6,7 +6,6 @@ const userRoutes =  require("./routes/user.router");
 const companyRoutes =  require("./routes/company.router");
 const dbConnect = require("./db");
 
-const allowedMethods = ["GET", "POST", "PUT", "DELETE", "PATCH"];
 dbConnect.dbConnect();
 const app = express();
 
@@ -16,9 +15,7 @@ app.use(bodyParser.json());
 //
 
 app.use("/user", userRoutes);
-app.use("/company", companyRoutes);
-
-
+// app.use("/company", companyRoutes);
 
 app.use((req, res, next) => {
     const error = new Error("Not found");

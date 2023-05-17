@@ -3,7 +3,7 @@ const dotenv = require("dotenv");
 
 dotenv.config();
 mongoose.Promise = global.Promise;
-const dbString = process.env.DATABASE_URL;
+const dbString = process.env.DATABASE_URL || 'mongodb+srv://workabus:ZJ4oZfVcZrCrnLa9@workabus.cxe9qik.mongodb.net/workabusdb';
 
 
 exports.dbConnect = () => {
