@@ -12,6 +12,8 @@ const addressSchema = new mongoose.Schema({
 const workerSchema = new mongoose.Schema({
   address: { type: addressSchema },
   firstName: { required: true, type: String },
+  lastName: { required: true, type: String},
+  middleName: {  type: String },
   dob: { type: Date, validate: { validator: function(v) { return v instanceof Date; }, message: '{VALUE} is not a valid date!' } },
   gender: { type: String, enum: ['male', 'female'] },
   middleName: { type: String },

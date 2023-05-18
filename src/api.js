@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 //
 
 app.use("/user", userRoutes);
-// app.use("/company", companyRoutes);
+app.use("/company", companyRoutes);
 
 app.use((req, res, next) => {
     const error = new Error("Not found");
